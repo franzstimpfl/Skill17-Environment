@@ -18,6 +18,8 @@
     ssh competitor@127.0.0.1
     
 ## Make symbolic link from persistent sources directory to html webroot
+Note: if you just want to use single controller (like Laravel) to handle everything or know how to Apache, you can just change your `vhost.conf`. If you change it in host repository, new image (and container) can be built with persistent change (but other changes inside container are lost).
+
     # Examples:
     # When created Laravel app named "backend"
     ln -s /var/www/sources/backend/public /var/www/html/api
