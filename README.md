@@ -4,7 +4,8 @@
     docker build -t esimage .
 
 ## How to use the built image
-    cd Skill17-Environment    # change your directory to Github repository
+    # change your directory to Github repository before running Docker command to make sure volume mounts are created right
+    cd Skill17-Environment
     docker run -d --name esimage -p 80:80 -p 8000:8000 -p 3306:3306 -p 22:22 -p 4200:4200 -v "$(pwd)/mysql:/var/lib/mysql" -v "$(pwd)/sources:/var/www/sources" esimage:latest
 
 (note: this command should work on Unix-based systems (Linux, OS X, WSL etc.) and Windows Powershell. If it is not working, changing `$(pwd)` to your current directory might help.)
